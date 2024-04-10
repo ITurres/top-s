@@ -25,35 +25,39 @@ interface FloatingAstronautProps {
   };
 }
 
-const FloatingAstronaut: React.FC<FloatingAstronautProps> = ({
-  animationSpeed,
-  maxWidth,
-  move,
-  scale,
-  rotation,
-}) => (
-  <img
-    src={floatingAstronaut}
-    alt=""
-    className="floating-astronaut"
-    aria-hidden="true"
-    style={
-      {
-        '--maxWidth': `${maxWidth}px`,
-        '--animationSpeed': `${animationSpeed}s`,
-        '--fromLeft': `${move?.fromLeft}px`,
-        '--fromRight': `${move?.fromRight}px`,
-        '--toLeft': `${move?.toLeft}%`,
-        '--toRight': `${move?.toRight}%`,
-        '--fromTop': `${move?.fromTop}px`,
-        '--toTop': `${move?.toTop}px`,
-        '--fromScale': `${scale?.fromScale}`,
-        '--toScale': `${scale?.toScale}`,
-        '--rotate': `${rotation?.rotate}deg`,
-      } as CSSProperties
-    }
-  />
-);
+function FloatingAstronaut(props: FloatingAstronautProps): React.ReactElement {
+  const {
+    animationSpeed,
+    maxWidth,
+    move,
+    scale,
+    rotation,
+  } = props;
+
+  return (
+    <img
+      src={floatingAstronaut}
+      alt=""
+      className="floating-astronaut"
+      aria-hidden="true"
+      style={
+        {
+          '--maxWidth': `${maxWidth}px`,
+          '--animationSpeed': `${animationSpeed}s`,
+          '--fromLeft': `${move?.fromLeft}px`,
+          '--fromRight': `${move?.fromRight}px`,
+          '--toLeft': `${move?.toLeft}%`,
+          '--toRight': `${move?.toRight}%`,
+          '--fromTop': `${move?.fromTop}px`,
+          '--toTop': `${move?.toTop}px`,
+          '--fromScale': `${scale?.fromScale}`,
+          '--toScale': `${scale?.toScale}`,
+          '--rotate': `${rotation?.rotate}deg`,
+        } as CSSProperties
+      }
+    />
+  );
+}
 
 FloatingAstronaut.defaultProps = {
   move: {
