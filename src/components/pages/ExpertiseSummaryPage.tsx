@@ -6,7 +6,7 @@ import '../../styles/pages/ExpertiseSummaryPage.scss';
 
 import setPageTitle from '../../utils/setPageTitle.ts';
 
-const ExpertiseSummaryPage: React.FC = () => {
+function ExpertiseSummaryPage(): React.ReactElement {
   setPageTitle('My expertise 💼');
 
   return (
@@ -35,6 +35,6 @@ const ExpertiseSummaryPage: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ExpertiseSummaryPage;

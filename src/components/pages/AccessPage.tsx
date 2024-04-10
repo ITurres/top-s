@@ -26,7 +26,7 @@ const AstronautStyleProps = {
   },
 };
 
-const AccessPage = () => {
+function AccessPage(): React.ReactElement {
   const $accessPageMain = useRef<HTMLElement>(null);
   const $videoElement = useRef<HTMLVideoElement>(null);
   const navigate = useNavigate();
@@ -79,6 +79,6 @@ const AccessPage = () => {
       <AccessPageVideo $videoElement={$videoElement} />
     </div>
   );
-};
+}
 
 export default AccessPage;

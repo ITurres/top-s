@@ -12,14 +12,16 @@ import ExpertiseLinks from '../UI/ExpertiseLinks.tsx';
 
 import setPageTitle from '../../utils/setPageTitle.ts';
 
-const AboutPage: React.FC = () => {
+function AboutPage(): React.ReactElement {
   const $aboutPage = useRef<HTMLElement>(null);
 
   setPageTitle('About me 🙋‍♂️');
 
   useEffect(() => {
     if ($aboutPage.current) {
-      $aboutPage.current.style.display = 'flex'; // ?overrides the {display: none} on 'aboutPage.scss'. This is to prevent the aboutPage from showing before animation is applied.
+      // * overrides the {display: none} on 'aboutPage.scss'.
+      // * This is to prevent the aboutPage from showing before animation is applied.
+      $aboutPage.current.style.display = 'flex';
       $aboutPage.current.classList.add('blend-in-out');
     }
   });
@@ -68,6 +70,6 @@ const AboutPage: React.FC = () => {
       </div>
     </main>
   );
-};
+}
 
 export default AboutPage;

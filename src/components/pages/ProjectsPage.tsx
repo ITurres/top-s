@@ -10,7 +10,7 @@ import setPageTitle from '../../utils/setPageTitle.ts';
 
 import involvement from '../../services/involvementAPI/involvementAPI.ts';
 
-const ProjectsPage: React.FC = () => {
+function ProjectsPage(): React.ReactElement {
   setPageTitle('My projects 😊');
 
   const [projectsLikes, setProjectsLikes] = useState([{}]);
@@ -49,6 +49,6 @@ const ProjectsPage: React.FC = () => {
       </main>
     </div>
   );
-};
+}
 
 export default ProjectsPage;

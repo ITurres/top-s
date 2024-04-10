@@ -10,7 +10,7 @@ import ProjectsPage from './ProjectsPage.tsx';
 import NotFoundPage from './NotFoundPage.tsx';
 import FileTabsNavbar from '../UI/FileTabsNavbar.tsx';
 
-const HomePage: React.FC = () => {
+function HomePage(): React.ReactElement {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const minWith = 768;
 
@@ -36,6 +36,6 @@ const HomePage: React.FC = () => {
       </Routes>
     </>
   );
-};
+}
 
 export default HomePage;
