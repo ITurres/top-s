@@ -38,7 +38,7 @@ function LikeButton(props: LikeButtonProps): React.ReactElement {
 
   const styleButton = useCallback(() => {
     if (wasLiked) {
-      likeBtn.current?.classList.toggle('liked');
+      likeBtn.current?.classList.add('liked');
     }
   }, [wasLiked]);
 
@@ -100,13 +100,15 @@ function LikeButton(props: LikeButtonProps): React.ReactElement {
   const handleLikeSubmit = async () => {
     // ? Since 'wasLiked' was false, now it will be set to true. This is to
     // ? trigger the function 'styleButton' to add the 'liked' class to the button.
-    setWasLiked((wasLiked) => !wasLiked);
+    setWasLiked(true);
 
     // * shows an instant update of the like count.
     if (!wasLiked) {
       setLikeCount((count) => count + 1);
       // * set 'wasLiked' to false, so that the user can like the project again.
-      setWasLiked((wasLiked) => !wasLiked);
+      setTimeout(() => {
+        setWasLiked(false);
+      }, 1000);
     }
 
     if (projectsLikes[0].error || error) {
