@@ -16,7 +16,7 @@ import { LuSquareStack } from 'react-icons/lu';
 
 import '../../styles/UI/Navbar.scss';
 
-const Navbar: React.FC = () => {
+function Navbar(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const minWith = 768;
@@ -169,6 +169,6 @@ const Navbar: React.FC = () => {
       </ul>
     </nav>
   );
-};
+}
 
 export default Navbar;

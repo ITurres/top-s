@@ -25,7 +25,9 @@ interface LikeButtonProps {
   projectsLikes: Like[];
 }
 
-const LikeButton: React.FC<LikeButtonProps> = ({ itemId, projectsLikes }) => {
+function LikeButton(props: LikeButtonProps): React.ReactElement {
+  const { itemId, projectsLikes } = props;
+
   const [wasLiked, setWasLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
   const [error, setError] = useState(false);
@@ -164,6 +166,6 @@ const LikeButton: React.FC<LikeButtonProps> = ({ itemId, projectsLikes }) => {
       )}
     </button>
   );
-};
+}
 
 export default LikeButton;
