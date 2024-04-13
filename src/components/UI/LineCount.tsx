@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const LineCount: React.FC = () => {
+function LineCount(): React.ReactElement {
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const spanHeight = 24; // ? 24px.
 
@@ -29,6 +29,6 @@ const LineCount: React.FC = () => {
       ))}
     </div>
   );
-};
+}
 
 export default LineCount;

@@ -25,7 +25,9 @@ interface LikeButtonProps {
   projectsLikes: Like[];
 }
 
-const LikeButton: React.FC<LikeButtonProps> = ({ itemId, projectsLikes }) => {
+function LikeButton(props: LikeButtonProps): React.ReactElement {
+  const { itemId, projectsLikes } = props;
+
   const [wasLiked, setWasLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
   const [error, setError] = useState(false);
@@ -36,7 +38,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ itemId, projectsLikes }) => {
 
   const styleButton = useCallback(() => {
     if (wasLiked) {
-      likeBtn.current?.classList.toggle('liked');
+      likeBtn.current?.classList.add('liked');
     }
   }, [wasLiked]);
 
@@ -98,13 +100,15 @@ const LikeButton: React.FC<LikeButtonProps> = ({ itemId, projectsLikes }) => {
   const handleLikeSubmit = async () => {
     // ? Since 'wasLiked' was false, now it will be set to true. This is to
     // ? trigger the function 'styleButton' to add the 'liked' class to the button.
-    setWasLiked((wasLiked) => !wasLiked);
+    setWasLiked(true);
 
     // * shows an instant update of the like count.
     if (!wasLiked) {
       setLikeCount((count) => count + 1);
       // * set 'wasLiked' to false, so that the user can like the project again.
-      setWasLiked((wasLiked) => !wasLiked);
+      setTimeout(() => {
+        setWasLiked(false);
+      }, 1000);
     }
 
     if (projectsLikes[0].error || error) {
@@ -164,6 +168,6 @@ const LikeButton: React.FC<LikeButtonProps> = ({ itemId, projectsLikes }) => {
       )}
     </button>
   );
-};
+}
 
 export default LikeButton;

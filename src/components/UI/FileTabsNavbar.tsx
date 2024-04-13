@@ -5,7 +5,7 @@ import { FaReact } from 'react-icons/fa';
 
 import '../../styles/UI/FileTabsNavbar.scss';
 
-const FileTabsNavbar: React.FC = () => {
+function FileTabsNavbar(): React.ReactElement {
   const iconSize = 26;
 
   const { pathname } = useLocation();
@@ -74,6 +74,6 @@ const FileTabsNavbar: React.FC = () => {
       </ul>
     </nav>
   );
-};
+}
 
 export default FileTabsNavbar;

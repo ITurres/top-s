@@ -9,7 +9,7 @@ import ContactForm from '../UI/ContactForm.tsx';
 
 import setPageTitle from '../../utils/setPageTitle.ts';
 
-const ContactPage: React.FC = () => {
+function ContactPage(): React.ReactElement {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const laptopWidth = 1366;
 
@@ -42,6 +42,6 @@ const ContactPage: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ContactPage;

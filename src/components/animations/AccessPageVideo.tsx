@@ -7,20 +7,22 @@ interface AccessPageVideoProps {
   $videoElement: RefObject<HTMLVideoElement> | null;
 }
 
-const AccessPageVideo: React.FC<AccessPageVideoProps> = ({ $videoElement }) => (
+function AccessPageVideo(props: AccessPageVideoProps): React.ReactElement {
+  const { $videoElement } = props;
   /* eslint-disable jsx-a11y/media-has-caption */
-  <video
-    playsInline
-    ref={$videoElement}
-    className="accessPage-video"
-    width="100%"
-  >
-    <source src={webmVideo} type="video/webm" />
-    <source src={mp4Video} type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  /* eslint-disable jsx-a11y/media-has-caption */
-);
+  return (
+    <video
+      playsInline
+      ref={$videoElement}
+      className="accessPage-video"
+      width="100%"
+    >
+      <source src={webmVideo} type="video/webm" />
+      <source src={mp4Video} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
 
 /* eslint-disable no-undef */
 

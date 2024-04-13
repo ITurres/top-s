@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import droneFile from '../../assets/images/gif/drone.gif';
 import '../../styles/animations/Drone.scss';
 
-const Drone: React.FC = () => {
+function Drone(): React.ReactElement {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [firstMove, setFirstMove] = useState(false);
   const drone = useRef<HTMLImageElement>(null);
@@ -77,6 +77,6 @@ const Drone: React.FC = () => {
       }}
     />
   );
-};
+}
 
 export default Drone;

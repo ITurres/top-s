@@ -25,7 +25,9 @@ const AstronautStyleProps = {
   },
 };
 
-const NotFoundPage: React.FC<NotFoundPageProps> = ({ fromPath }) => {
+function NotFoundPage(props: NotFoundPageProps): React.ReactElement {
+  const { fromPath } = props;
+
   const isWildCardAtAccessPage = fromPath === '/';
 
   const pathTo = isWildCardAtAccessPage ? '/' : '/homepage';
@@ -63,6 +65,6 @@ const NotFoundPage: React.FC<NotFoundPageProps> = ({ fromPath }) => {
       </header>
     </main>
   );
-};
+}
 
 export default NotFoundPage;
