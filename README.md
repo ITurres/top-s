@@ -181,6 +181,7 @@ To run the linters included in this project, execute the following command:
 - [x] Swap configs to Environmental Variables.
 - [x] Small Waving Alien in _Thank You btn message_ at the contact form.
 - [x] Horizontal ide Navbar.
+- [ ] Update resume link and expertise data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
