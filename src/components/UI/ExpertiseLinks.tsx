@@ -28,7 +28,7 @@ function ExpertiseLinks(): React.ReactElement {
         skills
       </Link>
       <a
-        href="https://docs.google.com/document/d/1vfOALwpILAh8Jn29zV6aO6jwuGZQwLyYjRb3_YKZfQ0/edit?usp=sharing"
+        href="https://docs.google.com/document/d/1oCGTGmHpSoumnVm-3aEKVdW8zkpKnAbf/edit?usp=sharing&ouid=111255547278244482581&rtpof=true&sd=true"
         className="text-hue-rotate"
         aria-label="navigate to Arthur's resume which is hosted on Google Docs"
         target="_blank"
