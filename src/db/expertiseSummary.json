@@ -1,19 +1,22 @@
 {
   "languages": ["TypeScript", "JavaScript", "Ruby", "Python", "c"],
   "frameworks & libraries": [
+    "Angular",
+    "RxJS",
     "React.js",
     "Redux",
     "Jest",
     "Ruby on Rails",
     "RSpec",
     "Bootstrap",
-    "D3.js",
+    "Skote",
+    "Chart.js",
     "Flask"
   ],
   "web development": [
     "HTML",
     "CSS3",
-    "SASS",
+    "Sass",
     "Responsive design",
     "Cross-browser compatibility",
     "Web accessibility",
@@ -30,6 +33,11 @@
     "Render"
   ],
   "skills": [
+    "Tutor",
+    "Mentor",
+    "Code reviewer",
+    "Documentation",
+    "Development Workflow",
     "TDD",
     "Agile",
     "Pair Programming",
