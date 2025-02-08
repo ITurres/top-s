@@ -16,6 +16,7 @@ function AccessPageVideo(props: AccessPageVideoProps): React.ReactElement {
       ref={$videoElement}
       className="accessPage-video"
       width="100%"
+      muted
     >
       <source src={webmVideo} type="video/webm" />
       <source src={mp4Video} type="video/mp4" />

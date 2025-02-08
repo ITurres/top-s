@@ -45,12 +45,32 @@ function AccessPage(): React.ReactElement {
       setTimeout(() => {
         if ($videoElement.current) {
           $videoElement.current.style.display = 'block';
-          $videoElement.current.play();
-          setPageTitle('🚀..........');
+          $videoElement.current.muted = true;
+
+          const playPromise = $videoElement.current.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                // eslint-disable-next-line
+                console.log(
+                  '/iturres-reactive-portfolio/ Video started successfully',
+                );
+                setPageTitle('🚀..........');
+              })
+              .catch((error) => {
+                // eslint-disable-next-line
+                console.error('Video play failed:', error);
+                navigate('/homepage');
+              });
+          } else {
+            navigate('/homepage');
+          }
         }
       }, 200);
 
       $videoElement.current.addEventListener('ended', () => navigate('/homepage'));
+    } else {
+      navigate('/homepage');
     }
   };
 
